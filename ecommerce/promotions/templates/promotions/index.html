@@ -1,0 +1,27 @@
+{% extends "promotions/base_promotions.html" %}
+
+{% block promotions_content %}
+
+    {% if promotions %}
+        <h1>Promoções</h1>
+        <div class="container-fluid p-5">
+            <div class="row ">
+                {% for promotion in promotions %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card m-2">
+                            <img src="..." class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title">{{ promotion.title }}</h5>
+                                <p class="card-text">
+                                    {{ promotion.description }} - R$ {{ promotion.price }}
+                                </p>
+                                <a href="{% url 'promotions:detail_promotion' promotion.id %}" class="btn btn-primary">Promoção {{ promotion.id }}</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

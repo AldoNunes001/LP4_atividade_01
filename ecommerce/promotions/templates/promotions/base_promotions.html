@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Promotions - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <!-- Especificidades do template de promotions -->
+    <div class="promotions">
+        {% block promotions_content %}
+        <!-- Conteúdo específico de promotions -->
+        {% endblock %}
+    </div>
+{% endblock %}
